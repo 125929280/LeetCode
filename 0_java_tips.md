@@ -18,11 +18,26 @@ T[] array = list.toArray(new T[list.size()]);
 ```java
 //StringBuffer
 StringBuffer s = new StringBuffer();
+//添加
 public StringBuffer append(String s)
+//删除
 public delete(int start, int end)
 public StringBuffer deleteCharAt(int indexpoint)
 
 //String
 String S = new String();
+//查询
+charAt()
 public boolean contains(CharSequence sequence) //char + "" => String
+
+//StringBuffer ==> String
+String S = s.toString()
+String S = new String(s)
+```
+
+**HashMap**
+```java
+Map<T, V> map = new Map<>();
+//查询
+getOrDefault();
 ```
