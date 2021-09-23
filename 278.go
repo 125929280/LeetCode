@@ -7,14 +7,15 @@
  */
 
 func firstBadVersion(n int) int {
-	l, r := 1, n
-	for l < r {
+	l, r, ans := 1, n, n
+	for l <= r {
 		m := l + (r-l)/2
 		if isBadVersion(m) {
-			r = m
+			ans = m
+			r = m - 1
 		} else {
 			l = m + 1
 		}
 	}
-	return l
+	return ans
 }
