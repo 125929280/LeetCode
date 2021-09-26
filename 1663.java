@@ -10,11 +10,6 @@ class Solution {
             }
             ans[i] = (char)('a' + t);
         }
-        // StringBuffer s = new StringBuffer();
-        // for(int i = n-1;i >= 0;i --) {
-        //     s.append((char)(map[i] + 'a'));
-        //     // System.out.println();
-        // }
         return new String(ans);
     }
 }
