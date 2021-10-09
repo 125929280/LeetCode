@@ -37,7 +37,26 @@ String S = new String(s)
 
 **HashMap**
 ```java
-Map<T, V> map = new Map<>();
-//查询
-getOrDefault();
+Map<T, V> map = new HashMap<>();
+map.put(key, map.getOrDefault(key) + 1);
+for(T key:map.keySet()) {
+    ...
+}
+map.getOrDefault();
+```
+
+**HashSet**
+```java
+Set<T> set = new HashSet<>();
+set.add()
+set.contains()
+```
+
+**栈**
+```java
+Deque<T> stack = new LinkedList<>();
+stack.push(t);
+stack.pop();
+stack.peek();
+
 ```
