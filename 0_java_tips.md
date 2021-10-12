@@ -35,6 +35,11 @@ String S = s.toString()
 String S = new String(s)
 ```
 
+**StringBuilder & String**
+```java
+StringBuilder s = new StringBuilder();
+```
+
 **HashMap**
 ```java
 Map<T, V> map = new HashMap<>();
