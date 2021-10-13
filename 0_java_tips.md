@@ -5,6 +5,11 @@ a.length()//字符串长度
 a.size()//泛型集合元素个数
 ```
 
+**无穷小&无穷大**
+```java
+Integer.MAX_VALUE
+```
+
 **泛型集合与数组的转换**
 ```java
 T[] array = new T[size];
@@ -64,4 +69,19 @@ stack.push(t);
 stack.pop();
 stack.peek();
 
+```
+
+**字符串与数字互转**
+```java
+int i = Integer.parseInt(s);
+String s = String.valueOf(i);
+```
+
+**自定义排序**
+```java
+Arrays.sort(a, new Comparator<T>() {
+    public int compare(T t1, T t2) {
+        return t1-t2;//升序
+    }
+})
 ```
