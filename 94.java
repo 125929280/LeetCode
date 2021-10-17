@@ -15,33 +15,52 @@
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
-        //递归
-        // List<Integer> ans = new ArrayList<Integer>();
-        // inorder(root, ans);
+        // 递归
+        // List<Integer> ans = new ArrayList<>();
+        // inOrder(ans, root);
         // return ans;
 
-        //迭代
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        List<Integer> ans = new ArrayList<Integer>();
+        // 迭代
+        // List<Integer> ans = new ArrayList<>();
+        // Deque<TreeNode> stack = new LinkedList<>();
+        // while(root != null || !stack.isEmpty()) {
+        //     while(root != null) {
+        //         stack.push(root);
+        //         root = root.left;
+        //     }
+        //     root = stack.pop();
+        //     ans.add(root.val);
+        //     root = root.right;
+        // }
+        // return ans;
 
-        while(root != null || stack.size() > 0) {
-            while(root != null) {
-                stack.add(root);
-                root = root.left;
+        //Morris
+        List<Integer> ans = new ArrayList<>();
+        TreeNode pre = null;
+        while(root != null) {
+            if(root.left == null) {
+                ans.add(root.val);
+                root = root.right;
+            } else {
+                pre = root.left;
+                while(pre.right != null && pre.right != root) pre = pre.right;
+                if(pre.right == null) {
+                    pre.right = root;
+                    root = root.left;
+                } else if(pre.right == root) {
+                    ans.add(root.val);
+                    pre.right = null;
+                    root = root.right;
+                }
             }
-            root = stack.peek();
-            stack.pop();
-            ans.add(root.val);
-
-            root = root.right;
         }
         return ans;
     }
 
-    // public void inorder(TreeNode root, List<Integer> ans) {
+    // public void inOrder(List<Integer> ans, TreeNode root) {
     //     if(root == null) return ;
-    //     inorder(root.left, ans);
+    //     inOrder(ans, root.left);
     //     ans.add(root.val);
-    //     inorder(root.right, ans);
+    //     inOrder(ans, root.right);
     // }
 }
