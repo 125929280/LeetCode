@@ -43,6 +43,7 @@ String S = new String(s)
 **StringBuilder & String**
 ```java
 StringBuilder s = new StringBuilder();
+s.toString();
 ```
 
 **HashMap**
@@ -68,7 +69,13 @@ Deque<T> stack = new LinkedList<>();
 stack.push(t);
 stack.pop();
 stack.peek();
+```
 
+**队列**
+```java
+Queue<T> queue = new LinkedList<>();
+queue.offer(t);
+queue.poll();
 ```
 
 **字符串与数字互转**
