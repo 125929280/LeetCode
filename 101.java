@@ -4,25 +4,16 @@
  *     int val;
  *     TreeNode left;
  *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
+ *     TreeNode(int x) { val = x; }
  * }
  */
 class Solution {
     public boolean isSymmetric(TreeNode root) {
-        if(root == null) return true;
-        return dfs(root.left, root.right);
+        return root == null || helper(root.left, root.right);
     }
-
-    public boolean dfs(TreeNode l, TreeNode r) {
+    public boolean helper(TreeNode l, TreeNode r) {
         if(l == null && r == null) return true;
-        if(l == null || r == null || l.val != r.val) return false;
-
-        return dfs(l.left, r.right) && dfs(l.right, r.left);
+        if(l == null || r == null) return false;
+        return l.val == r.val && helper(l.left, r.right) && helper(l.right, r.left);
     }
 }
